@@ -3,17 +3,12 @@ body
 {
     margin: 0;
     padding: 0;
-    /* background-color: #faf9ff; */
+    background-color: #faf9ff;
     overflow-y: hidden;
+    font-family: 'Montserrat', sans-serif;
 }
 
 h1
 {
-    font-family: "Nunito Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight:700;
-    font-style: normal;
-    font-variation-settings:
-      "wdth" 100,
-      "YTLC" 500;
+    font-family: 'Montserrat', sans-serif;
 }

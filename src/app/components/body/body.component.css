@@ -1,0 +1,33 @@
+#firstblob
+{
+    position:absolute;
+   top: 50%;
+    left: 0%;
+    width: 500px;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+
+#secondblob
+{
+    position: absolute; 
+    top:60% ;left:50%;
+    z-index: -1;
+    opacity:0.5;
+}
+
+
+@media (max-width: 1000px) {
+    #firstblob
+    {
+        width: 300px;
+        top: 5%;
+        right: 0;
+    }
+#secondblob
+{
+    top: 50%;
+    left: 0;
+}
+}
