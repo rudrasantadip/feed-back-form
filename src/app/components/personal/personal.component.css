@@ -1,8 +1,19 @@
 .btn-primary
 {
+    background-color: transparent;
+    text-align: center;
+    width: 200px;
+    border: 0.3px solid #6c5ce7;
+    color: #6c5ce7;
+}
+
+.btn-primary:hover
+{
     background-color: #6c5ce7;
     text-align: center;
     width: 200px;
+    border: 0.5px solid #6c5ce7;
+    color: white;
 }
 
 main
@@ -59,7 +70,7 @@ align-items: center;
     width: 500px;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1024px) {
 
 .personal-info-heading
 {
@@ -93,9 +104,13 @@ align-items: center;
 
 main
 {
+top: 55%;    
 transform: translate(-50%,-50%);
 }
-
+.form-floating
+{
+    margin-top: 9px;
+}
 .form-floating input
 {
     width: 300px;

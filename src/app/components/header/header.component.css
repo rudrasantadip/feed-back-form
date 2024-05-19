@@ -6,10 +6,11 @@ h1
 
 .header-content
 {
-    width: 80vw;
+    width:80vw;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    padding: 6px;
 }
 
 .feedback-heading
@@ -48,7 +49,7 @@ h1
     display: none;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1024px) {
 
 #header-adcomsys
 {
@@ -107,4 +108,14 @@ h1
 {
     width: 50px;
 }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1024px) and (min-height: 1366px) and (max-height: 1366px) {
+    /* Your CSS rules go here */
+
+    .header-content
+{
+    width: 70vw;
+}
+  
 }

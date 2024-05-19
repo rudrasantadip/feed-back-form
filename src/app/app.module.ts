@@ -9,6 +9,7 @@ import { BodyComponent } from './components/body/body.component';
 import { PersonalComponent } from './components/personal/personal.component';
 import { VerifyComponent } from './components/verify/verify.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
+import { Feedback2Component } from './components/feedback2/feedback2.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FeedbackComponent } from './components/feedback/feedback.component';
     BodyComponent,
     PersonalComponent,
     VerifyComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    Feedback2Component
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,155 @@
+.btn-primary
+{
+    background-color: transparent;
+    text-align: center;
+    width: 200px;
+    border: 0.3px solid #6c5ce7;
+    color: #6c5ce7;
+}
+
+.btn-primary:hover
+{
+    background-color: #6c5ce7;
+    text-align: center;
+    width: 200px;
+    border: 0.5px solid #6c5ce7;
+    color: white;
+}
+
+main
+{
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-30%,-50%);
+    padding: 13px;
+
+}
+
+.personal-logo > .material-symbols-outlined
+{
+    font-size: 100px;
+    color: #6c5ce7;
+}
+
+.personal-info-heading
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.personal-header
+{
+    text-align: center;
+}
+
+.personal-header > span
+{
+    margin: 0;
+    padding: 0;
+}
+
+.personal-header > h1
+{
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.form-data
+{
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+padding: 9px;
+}
+
+.pin-view > input
+{
+    margin-top: 16px;
+    width: 40px;
+    height: 40px;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.pin-view > input:focus {
+    border-color: #6c5ce7; /* Change border color */
+    box-shadow: 0 0 5px rgba(102, 175, 233, 0.5); /* Add a shadow */
+    outline: none; /* Remove default outline */
+    background-color: #f0f8ff; /* Change background color */
+}
+
+.buttons
+{
+    margin-top: 15px;
+}
+
+@media (max-width: 1024px) {
+
+.personal-info-heading
+{
+    flex-direction: column;
+    width: 100%;
+    padding-top: 9px;
+    text-align: center;
+}
+
+    .personal-header > h1
+    {
+        padding: 0;
+        margin-top: 5px;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+
+.personal-logo > .material-symbols-outlined
+{
+    font-size: 50px;
+}
+
+.personal-header > h1
+{
+    font-size: 16px;
+}
+.personal-header > span{
+    font-size: 12px;
+}
+
+main
+{
+top: 55%;    
+transform: translate(-50%,-50%);
+}
+.form-floating
+{
+    margin-top: 9px;
+}
+.form-floating input
+{
+    width: 300px;
+    font-size: 16px;
+}
+
+}
+
+@media (max-width: 1024px) 
+{
+    .pin-view > input
+    {
+        margin-top: 16px;
+        width: 20px;
+        height: 20px;
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+   
+.buttons
+{
+   display: flex;
+   flex-direction: column-reverse;
+}
+}

@@ -1,1 +1,163 @@
-<p>feedback works!</p>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+<main>
+  <div class="personal-info-heading">
+    <div class="personal-logo">
+      <span class="material-symbols-outlined"> rate_review </span>
+    </div>
+
+    <div class="personal-header">
+      <h1>Feedback</h1>
+      <span>Please provide how was your experience in all of the events</span>
+    </div>
+  </div>
+
+  <div class="form-data">
+
+    <div class="section1">
+
+      <div class="form-floating m-2">
+        <input
+          type="email"
+          class="form-control"
+          id="floatingInput"
+          placeholder="name@example.com"
+        />
+        <label for="floatingInput">Email address</label>
+      </div>
+  
+      <select class="form-select" aria-label="Default select example">
+        <option selected>Choose the event</option>
+        <option value="1">Flutter Fiesta</option>
+        <option value="2">Poster Compedition</option>
+        <option value="3">Wisdom War</option>
+        <option value="3">Coders Brawl</option>
+      </select>
+    </div>
+    
+
+    <div class="check-boxes mt-3 text-center">
+      <span>What did you liked most about this event?</span>
+
+      <div class="check-box p3">
+        <div class="form-check me-1">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="flexCheckDefault"
+          />
+          <label class="form-check-label" for="flexCheckDefault">
+            Default checkbox
+          </label>
+        </div>
+        <div class="form-check  me-1">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="flexCheckDefault"
+          />
+          <label class="form-check-label" for="flexCheckDefault">
+            Default checkbox
+          </label>
+        </div>
+        <div class="form-check  me-1">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="flexCheckDefault"
+          />
+          <label class="form-check-label" for="flexCheckDefault">
+            Default checkbox
+          </label>
+        </div>
+        <div class="form-check  me-1">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="flexCheckDefault"
+          />
+          <label class="form-check-label  me-2" for="flexCheckDefault">
+            Default checkbox
+          </label>
+        </div>
+      </div>
+
+      <div class="ratings mt-3">
+        <span
+          >Rate the session by selecting the range lowest (left) to
+          hightest(right)
+        </span>
+
+        <div class="rating">
+          <label for="customRange2" class="form-label"
+            >How relevant was the event's content to your interests?</label
+          >
+          <ul>
+            <li>Good</li>
+            <li>Average</li>
+            <li>Bad</li>
+          </ul>
+          <input
+            type="range"
+            class="form-range"
+            min="0"
+            max="2"
+            step="1"
+            id="customRange1"
+          />
+        </div>
+
+        <div class="rating">
+          <label for="customRange2" class="form-label"
+            >How Would you rate the management in the event?</label
+          >
+          <ul>
+            <li>Good</li>
+            <li>Average</li>
+            <li>Bad</li>
+          </ul>
+          <input
+            type="range"
+            class="form-range"
+            min="0"
+            max="2"
+            step="1"
+            id="customRange2"
+          />
+        </div>
+
+        <div class="rating">
+          <label for="customRange3" class="form-label"
+            >How would you rate the importance of the information shared in the
+            event? *</label
+          >
+          <ul>
+            <li>Good</li>
+            <li>Average</li>
+            <li>Bad</li>
+          </ul>
+          <input
+            type="range"
+            class="form-range"
+            min="0"
+            max="2"
+            step="1"
+            id="customRange3"
+          />
+        </div>
+      </div>
+
+
+      <div class="buttons">
+        <button class="btn btn-primary ms-2">Next</button>
+        <button class="btn btn-light me-2">Previous</button>
+      </div>
+    </div>
+  </div>
+</main>

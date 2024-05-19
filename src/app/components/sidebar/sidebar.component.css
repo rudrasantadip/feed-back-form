@@ -7,7 +7,7 @@
 
 .side-bar-container
 {
-    height: 99vh;
+    height: 100vh;
     overflow-y: hidden;
     overflow-x: hidden;
 }
@@ -123,8 +123,14 @@
 }
 
 
-@media (max-width: 1000px) {
+@media (max-width: 1024px) {
 
+    .side-bar-container
+    {
+        height: 10vh;
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
 
 .line
 {
@@ -139,6 +145,7 @@
     {
         font-size: 15px;
         text-align: center;
+        margin-top: -4px;
     }
 
     .adcomsys-logo
@@ -158,6 +165,11 @@
         z-index: 1000;
     }
 
+    .access-button 
+    {
+        width: 25px;
+        height: 25px;
+    }
     .access-button button
     {
         width: 25px;
@@ -170,8 +182,6 @@
         align-items: center;
     }
 
-
-
     .progressbar ul li
     {
         margin-top: 0;
@@ -183,3 +193,10 @@
     font-weight: 500;
 }
 }
+
+@media (max-width: 1280px){
+    .side-bar-container
+    {
+        height: 100%;
+    }
+  }
