@@ -1,0 +1,110 @@
+h1
+{
+   margin-top: 15px;
+   padding:0 ;
+}
+
+.header-content
+{
+    width: 80vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.feedback-heading
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.organizers
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+
+}
+
+.organizer
+{
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 100px;
+ 
+}
+
+.organizer > img
+{
+    width: 100px;
+    object-fit: contain;
+    margin-top: auto;
+}
+
+
+#header-adcomsys
+{
+    display: none;
+}
+
+@media (max-width: 1000px) {
+
+#header-adcomsys
+{
+    display: block;
+}
+#header-adcomsys > img
+{
+    width: 50px;
+}
+
+.header-content
+{
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+    height: 120px;
+}
+
+.feedback-heading
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.feedback-heading h1
+{
+    font-size: 15px;
+}
+
+.organizers
+{
+    justify-content: space-between;
+}
+
+.organizer
+{
+
+}
+
+.organizer > img
+{
+    /* width: 50px; */
+    object-fit: fill;
+    object-position: center;
+}
+
+.college-logo
+{
+    display: block;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.college-logo > img
+{
+    width: 50px;
+}
+}

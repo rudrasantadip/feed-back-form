@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+body
+{
+    margin: 0;
+    padding: 0;
+    /* background-color: #faf9ff; */
+    overflow-y: hidden;
+}
+
+h1
+{
+    font-family: "Nunito Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight:700;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100,
+      "YTLC" 500;
+}
