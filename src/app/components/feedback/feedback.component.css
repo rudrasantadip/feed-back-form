@@ -1,5 +1,10 @@
 /* Bootstrap CSS Edits */
 
+main
+{
+  padding: 9px;
+}
+
 .btn-primary {
   background-color: transparent;
   text-align: center;
@@ -25,10 +30,6 @@
 
 /* BootStrap end */
 
-main {
-  align-items: center;
-  padding: 13px;
-}
 
 .personal-logo > .material-symbols-outlined {
   font-size: 100px;
@@ -74,10 +75,7 @@ main {
   justify-content: space-between;
 }
 
-/* STAR RATING */
-.checked {
-  color: orange;
-}
+
 
 /* Form sections */
 

@@ -37,7 +37,10 @@ main
 {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    /* Align along main axis  */
+    justify-content: center; 
+    /* Align along cross axis */
+    align-items: center;
 }
 
 .personal-header
@@ -69,6 +72,25 @@ align-items: center;
 {
     width: 500px;
 }
+
+.invalid-input
+{
+    border: 3px solid red;
+}
+
+/* Validation CSS */
+.invalid
+{
+    color: red;
+    font-size: 10px;
+    text-align: center;
+}
+
+
+
+
+
+
 
 @media (max-width: 1024px) {
 

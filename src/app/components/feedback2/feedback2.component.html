@@ -1,7 +1,22 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
 
-<div class="friend-share">
-    <span>Would you recommend this to your friends?</span>
+<main>
+  <div class="personal-info-heading">
+    <div class="personal-logo">
+      <span class="material-symbols-outlined"> rate_review </span>
+    </div>
 
+    <div class="personal-header">
+      <h1>Feedback</h1>
+      <span>Please provide how was your experience in all of the events</span>
+    </div>
+  </div>
+
+  <div class="form-data">
+    <span>Would you recommend about this event to your friends?</span>
     <div class="friend-check">
       <div class="form-check">
         <input
@@ -12,6 +27,7 @@
         />
         <label class="form-check-label" for="flexCheckDefault"> Yes </label>
       </div>
+
       <div class="form-check">
         <input
           class="form-check-input"
@@ -21,6 +37,7 @@
         />
         <label class="form-check-label" for="flexCheckDefault"> No </label>
       </div>
+
       <div class="form-check">
         <input
           class="form-check-input"
@@ -29,19 +46,36 @@
           id="flexCheckDefault"
         />
         <label class="form-check-label" for="flexCheckDefault">
-          Not Sure
+          Not Decided
         </label>
       </div>
     </div>
-  </div>
 
-  <div class="star-rating">
-    <span>Please rate the overall quality of the event</span>
-    <div class="stars">
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star"></span>
-        <span class="fa fa-star"></span>
+    <div class="how-to-be-better mt-3">
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label"
+          >How can we do better? Please let us know how we can do better in 1000
+          characters.
+        </label>
+        <textarea
+          class="form-control"
+          id="exampleFormControlTextarea1"
+          rows="3"
+        ></textarea>
+      </div>
+    </div>
+    <span>Please Rate the overall Quality of the event</span>
+    <div class="ratings">
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+    </div>
+
+    <div class="buttons mt-3">
+      <button class="btn btn-primary ms-2">Submit</button>
+      <button class="btn btn-light me-2">Previous</button>
     </div>
   </div>
+</main>

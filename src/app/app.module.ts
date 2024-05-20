@@ -10,6 +10,7 @@ import { PersonalComponent } from './components/personal/personal.component';
 import { VerifyComponent } from './components/verify/verify.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
 import { Feedback2Component } from './components/feedback2/feedback2.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { Feedback2Component } from './components/feedback2/feedback2.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

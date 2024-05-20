@@ -1,29 +1,47 @@
 <main>
-    <div class="personal-info-heading">
-        <div class="personal-logo">
-            <span class="material-symbols-outlined">
-               passkey
-            </span>
-        </div>
-    
-        <div class="personal-header">
-            <h1>Personal <span style="color: #6c5ce7;">Information</span></h1>
-            <span>Please provide your personal information carefully.</span>
-        </div>
+  <div class="personal-info-heading">
+    <div class="personal-logo">
+      <span class="material-symbols-outlined"> passkey </span>
     </div>
 
-
-    <div class="form-data">
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingInput" placeholder="Bernard Hackwell">
-            <label for="floatingInput">Full Name</label>
-        </div>
-
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingInput" placeholder="123456789">
-            <label for="floatingInput">Mobile Number</label>
-        </div>
-        <button class="btn btn-primary">Next</button>
+    <div class="personal-header">
+      <h1>Personal <span style="color: #6c5ce7">Information</span></h1>
+      <span>Please provide your personal information carefully.</span>
     </div>
+  </div>
+
+  <form  #personalInfo="ngForm" (ngSubmit)="gotoValidate(personalInfo)" >
+  <div class="form-data">
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          [ngClass]="nameClassList"
+          id="floatingInput"
+          placeholder="Bernard Hackwell"
+          name="name"
+          [(ngModel)]="userForm.name"
+          required
+        />
+        <label for="floatingInput">Full Name</label>
+        <div class="invalid">{{nameErrorMessage}}</div>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          [ngClass]="mobileClassList"
+          id="floatingInput"
+          placeholder="123456789"
+          name="mobile"
+          [(ngModel)]="userForm.mobileNumber"
+          required
+        />
+        <label for="floatingInput">Mobile Number</label>
+        <div class="invalid">{{mobileErrorMessage}}</div>
+      </div>
+      <button type="submit" class="btn btn-primary">Next</button>
+    </div>
+  </form>
 </main>
-

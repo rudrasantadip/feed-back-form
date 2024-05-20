@@ -9,23 +9,25 @@
         <div class="personal-header">
             <h1>Verification</h1>
             <span>Please Enter the OTP sent to the mobile number *******789</span>
+            <br>
+           
         </div>
     </div>
 
 
     <div class="form-data">
         <div class="pin-view">
-            <input type="text" maxlength="1">
-            <input type="text" maxlength="1">
-            <input type="text" maxlength="1">
-            <input type="text" maxlength="1">
+            <input type="text" maxlength="1" (input)="onInputPinView($event,0)" #pin0>
+            <input type="text" maxlength="1" (input)="onInputPinView($event,1)" #pin1>
+            <input type="text" maxlength="1" (input)="onInputPinView($event,2)" #pin2>
+            <input type="text" maxlength="1" (input)="onInputPinView($event,3)" #pin3>
         </div>
        
 
-        
+        <span style="font-size: 12px;margin-top: 9px;" class="text-center">Please wait for a few seconds for the otp to generate </span>
+
         <div class="buttons">
-            <button class="btn btn-light m-3">Previous</button>
-            <button class="btn btn-primary m-3">Next</button>
+            <button class="btn btn-primary m-3" (click)="validateOtp()">Validate</button>
         </div>
     </div>
 </main> 
