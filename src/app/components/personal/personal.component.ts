@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { ActivateComponentService } from 'src/app/services/activate-component.service';
 
 @Component({
   selector: 'app-personal',
   templateUrl: './personal.component.html',
   styleUrls: ['./personal.component.css']
 })
-export class PersonalComponent {
+export class PersonalComponent implements OnInit{
 
   //Name Validation variables
   isNameValid:boolean=false;
@@ -26,10 +27,14 @@ export class PersonalComponent {
   }
 
   //constructor 
-  constructor(private router:Router)
+  constructor(private router:Router, private activeComponent:ActivateComponentService)
   {
     this.nameClassList = new Set<string>("form-control");
     this.mobileClassList= new Set<string>("form-control");
+  }
+  //Oninit Method
+  ngOnInit(): void {
+    this.activeComponent.updateComponent(0);
   }
 
   //function to go to the otp verification page

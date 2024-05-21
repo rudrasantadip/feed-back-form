@@ -31,9 +31,13 @@
   /* BootStrap end */
   
   main {
-    align-items: center;
-    padding: 13px;
-  }
+  padding: 9px;
+  position: absolute;
+  left: 55%;
+  transform: translate(-50%);
+  overflow-y: auto;
+}
+  
   
   .personal-logo > .material-symbols-outlined {
     font-size: 100px;
@@ -78,6 +82,17 @@
     flex-direction: row-reverse;
     justify-content: space-between;
   }
+
+  .ratings button
+  {
+    background-color: transparent;
+    border: none;
+  }
+
+  .fa-star:hover
+  {
+    color: orange;
+  }
   
   .checked {
     color: orange;
@@ -111,6 +126,11 @@
   
   /* Media queries */
   @media (max-width: 1024px) {
+
+    main {
+      left: 50%;
+    }
+
     .personal-info-heading {
       flex-direction: column;
       width: 100%;
@@ -175,5 +195,17 @@
       font-size: 12px;
     }
   
+  }
+
+  @media (max-height: 600px)
+  {
+    *
+    {
+      font-size: 12px;
+    }
+    main
+    {
+      top: 29%;
+    }
   }
   

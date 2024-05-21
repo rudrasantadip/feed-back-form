@@ -52,7 +52,7 @@
     opacity: 0.7;
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1124px) {
     .grid-container {
        display: flex;
        flex-direction: column;

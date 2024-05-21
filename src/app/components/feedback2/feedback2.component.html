@@ -14,16 +14,18 @@
       <span>Please provide how was your experience in all of the events</span>
     </div>
   </div>
-
+  <form #feedback2="ngForm" (ngSubmit)="onSubmit(feedback2)">
   <div class="form-data">
     <span>Would you recommend about this event to your friends?</span>
     <div class="friend-check">
       <div class="form-check">
         <input
           class="form-check-input"
-          type="checkbox"
-          value=""
+          name="friends"
+          type="radio"
+          value="yes"
           id="flexCheckDefault"
+          [(ngModel)]=" recommendations"
         />
         <label class="form-check-label" for="flexCheckDefault"> Yes </label>
       </div>
@@ -31,9 +33,11 @@
       <div class="form-check">
         <input
           class="form-check-input"
-          type="checkbox"
-          value=""
+          type="radio"
+          name="friends"
+          value="no"
           id="flexCheckDefault"
+          [(ngModel)]=" recommendations"
         />
         <label class="form-check-label" for="flexCheckDefault"> No </label>
       </div>
@@ -41,9 +45,11 @@
       <div class="form-check">
         <input
           class="form-check-input"
-          type="checkbox"
-          value=""
+          type="radio"
+          name="friends"
+          value="not decided"
           id="flexCheckDefault"
+          [(ngModel)]=" recommendations"
         />
         <label class="form-check-label" for="flexCheckDefault">
           Not Decided
@@ -58,24 +64,40 @@
           characters.
         </label>
         <textarea
+          name="remarks"
           class="form-control"
           id="exampleFormControlTextarea1"
           rows="3"
+          [(ngModel)]="remarks"
         ></textarea>
       </div>
     </div>
     <span>Please Rate the overall Quality of the event</span>
     <div class="ratings">
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star"></span>
-      <span class="fa fa-star"></span>
+      <button (click)="rate(1)">
+        <span #star1 class="fa fa-star" [ngClass]="startClassList" (mouseenter)="mouseOverStar(1)" (mouseleave)="mouseOutsideStar(1)"></span>
+      </button>
+      <button (click)="rate(2)">
+        <span #star2 class="fa fa-star" [ngClass]="startClassList" (mouseenter)="mouseOverStar(2)"></span>
+      </button>
+      <button (click)="rate(3)">
+        <span #star3 class="fa fa-star" [ngClass]="startClassList" (mouseenter)="mouseOverStar(3)"></span>
+      </button>
+      <button (click)="rate(4)">
+        <span #star4 class="fa fa-star" [ngClass]="startClassList" (mouseenter)="mouseOverStar(4)"></span>
+      </button>
+      <button (click)="rate(5)">
+        <span #star5 class="fa fa-star" [ngClass]="startClassList" (mouseenter)="mouseOverStar(5)"></span>
+      </button>
+      <button (click)="rate(6)">
+        <span #star6 class="fa fa-star" [ngClass]="startClassList" (mouseenter)="mouseOverStar(6)"></span>
+      </button>
     </div>
 
     <div class="buttons mt-3">
-      <button class="btn btn-primary ms-2">Submit</button>
+      <button class="btn btn-primary ms-2" type="submit">Submit</button>
       <button class="btn btn-light me-2">Previous</button>
     </div>
   </div>
+</form>
 </main>

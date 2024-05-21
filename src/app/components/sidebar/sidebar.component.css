@@ -1,3 +1,10 @@
+button
+{
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+
 .material-symbols-outlined
 {
     font-size: 28px;

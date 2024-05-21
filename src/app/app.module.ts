@@ -11,6 +11,8 @@ import { VerifyComponent } from './components/verify/verify.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
 import { Feedback2Component } from './components/feedback2/feedback2.component';
 import { FormsModule } from '@angular/forms';
+import { NgxUiLoaderModule, NgxUiLoaderRouterModule } from "ngx-ui-loader";
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +23,16 @@ import { FormsModule } from '@angular/forms';
     PersonalComponent,
     VerifyComponent,
     FeedbackComponent,
-    Feedback2Component
+    Feedback2Component,
+    LoaderComponent
+ 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NgxUiLoaderModule,
+    NgxUiLoaderRouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

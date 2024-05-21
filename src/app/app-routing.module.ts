@@ -10,7 +10,6 @@ const routes: Routes = [
   {path:'verify',component:VerifyComponent},
   {path:'feedback',component:FeedbackComponent},
   {path:'feedback2',component:Feedback2Component},
-
   {path:'',redirectTo:'personal',pathMatch:'full'}
 ];
 

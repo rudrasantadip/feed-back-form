@@ -1,3 +1,23 @@
+<ngx-ui-loader
+[fgsTemplate]="fgSpinner"
+[bgsTemplate]="bgSpinner"
+[pbColor]="'#6c5ce7'"
+>
+
+</ngx-ui-loader>
+
+
+<ng-template #fgSpinner>
+  <div class="div">
+   <app-loader></app-loader>
+  </div>
+</ng-template>
+
+<ng-template #bgSpinner>
+  <app-loader></app-loader>
+</ng-template>
+
+
 <div class="grid-container">
   <header id="header" class="header">
     <app-header></app-header>
