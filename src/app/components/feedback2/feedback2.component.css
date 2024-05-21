@@ -52,11 +52,13 @@
   
   .personal-header {
     text-align: center;
+    font-size: 12px;
   }
   
   .personal-header > span {
     margin: 0;
     padding: 0;
+    font-size: 12x;
   }
   
   .personal-header > h1 {
@@ -129,8 +131,25 @@
 
     main {
       left: 50%;
+      padding: 9px;
+      overflow: scroll;
     }
 
+    label
+    {
+      font-size: 12px;
+    }
+
+    span
+    {
+      font-size: 12px;
+    }
+
+    .buttons>button
+    {
+      font-size: 12px;
+    }
+  
     .personal-info-heading {
       flex-direction: column;
       width: 100%;

@@ -32,11 +32,11 @@
           <label for="floatingInput">Email address</label>
         </div>
     
-        <select class="form-select" aria-label="Default select example" name="eventType" [(ngModel)]="feedBackData.eventType">
-          <option selected value="1">Flutter Fiesta</option>
-          <option value="2">Poster Compedition</option>
-          <option value="3">Wisdom War</option>
-          <option value="3">Coders Brawl</option>
+        <select class="form-select" aria-label="Select an option" name="eventType" [(ngModel)]="feedBackData.eventName">
+          <option value="Flutter Fiesta">Flutter Fiesta</option>
+          <option value="Poster Compedition">Poster Compedition</option>
+          <option value="Wisdom War">Wisdom War</option>
+          <option value="Coders Brawl">Coders Brawl</option>
         </select>
       </div>
       
@@ -52,7 +52,7 @@
               value=""
               id="flexCheckDefault"
               name="event_management"
-              [(ngModel)]="feedBackData.eventManagement"
+              [(ngModel)]="feedBackData.likedManagement"
             />
             <label class="form-check-label" for="flexCheckDefault">
               Event Management
@@ -65,7 +65,7 @@
               value=""
               id="flexCheckDefault"
               name="event_organization"
-              [(ngModel)]="feedBackData.eventOrganization"
+              [(ngModel)]="feedBackData.likedOrganization"
             />
             <label class="form-check-label" for="flexCheckDefault">
               Event Organization
@@ -78,7 +78,7 @@
               value=""
               id="flexCheckDefault"
               name="value_addition"
-              [(ngModel)]="feedBackData.valueAddition"
+              [(ngModel)]="feedBackData.likedValueAddition"
             />
             <label class="form-check-label" for="flexCheckDefault">
               Value Addition

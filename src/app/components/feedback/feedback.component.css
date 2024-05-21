@@ -2,11 +2,11 @@
 
 main
 {
-  padding: 9px;
   position: absolute;
-  left: 55%;
-  transform: translate(-50%);
+  left: 35%;
+  margin-top: 12px;
 }
+
 
 .btn-primary {
   background-color: transparent;
@@ -113,6 +113,27 @@ main
     padding-top: 9px;
     text-align: center;
   }
+  span
+  {
+    font-size: 12px;
+  }
+
+  label
+  {
+    font-size: 12px;
+  }
+
+  .btn
+  {
+    font-size: 12px;
+    width: 100px;
+  }
+
+  main
+  {
+    position: initial;
+    padding: 13px;
+  }
 
   .personal-header > h1 {
     padding: 0;
@@ -153,7 +174,7 @@ main
 
   .form-range
   {
-    width: 200px;
+    width: 190px;
   }
   .form-select
   {

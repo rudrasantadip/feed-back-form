@@ -24,7 +24,10 @@ export class SidebarComponent implements AfterViewInit{
     (currentComponent)=>
       {
         current=currentComponent;
-        this.buttons.toArray()[current].nativeElement.style.backgroundColor='#6c5ce7';
+        if(current!=-1)
+          {
+            this.buttons.toArray()[current].nativeElement.style.backgroundColor='#6c5ce7';
+          }
       }
     ) 
   }

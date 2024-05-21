@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { ActivateComponentService } from 'src/app/services/activate-component.service';
+import { PersonalInfoShareService } from 'src/app/services/personal-info-share.service';
+import { PersonalInformation } from 'src/app/models/personalInfo';
 
 @Component({
   selector: 'app-personal',
   templateUrl: './personal.component.html',
   styleUrls: ['./personal.component.css']
 })
-export class PersonalComponent implements OnInit{
+export class PersonalComponent implements OnInit,AfterViewInit{
 
   //Name Validation variables
   isNameValid:boolean=false;
@@ -21,31 +23,34 @@ export class PersonalComponent implements OnInit{
   mobileClassList:Set<string>
 
   //Json to fetch form data
-  userForm={
-    name:'',
+  userForm:PersonalInformation={
+    fullName:'',
     mobileNumber:''
   }
 
   //constructor 
-  constructor(private router:Router, private activeComponent:ActivateComponentService)
+  constructor(private router:Router, private activeComponent:ActivateComponentService, private infoShare:PersonalInfoShareService)
   {
     this.nameClassList = new Set<string>("form-control");
     this.mobileClassList= new Set<string>("form-control");
   }
+  ngAfterViewInit(): void {
+    this.activeComponent.updateComponent(0);
+  }
   //Oninit Method
   ngOnInit(): void {
-    this.activeComponent.updateComponent(0);
+   
   }
 
   //function to go to the otp verification page
   gotoValidate(personalInfo:NgForm)
   {
-    this.isNameValid=this.validateName(this.userForm.name);
+    this.isNameValid=this.validateName(this.userForm.fullName);
     this.isMobileValid=this.validateMobile(this.userForm.mobileNumber);
-
-    if(this.isNameValid==true && this.isMobileValid==true)
+    if(this.isNameValid==true && this.isMobileValid==true) // given credentials are valid
       {
-        this.router.navigate(['verify']);
+        this.infoShare.updateInfo(this.userForm) // save the info in the shared service
+        this.router.navigate(['verify']); // navigate to the otp verification section
       }
   }
 

@@ -74,24 +74,12 @@
     </div>
     <span>Please Rate the overall Quality of the event</span>
     <div class="ratings">
-      <button (click)="rate(1)">
-        <span #star1 class="fa fa-star" [ngClass]="startClassList" (mouseenter)="mouseOverStar(1)" (mouseleave)="mouseOutsideStar(1)"></span>
-      </button>
-      <button (click)="rate(2)">
-        <span #star2 class="fa fa-star" [ngClass]="startClassList" (mouseenter)="mouseOverStar(2)"></span>
-      </button>
-      <button (click)="rate(3)">
-        <span #star3 class="fa fa-star" [ngClass]="startClassList" (mouseenter)="mouseOverStar(3)"></span>
-      </button>
-      <button (click)="rate(4)">
-        <span #star4 class="fa fa-star" [ngClass]="startClassList" (mouseenter)="mouseOverStar(4)"></span>
-      </button>
-      <button (click)="rate(5)">
-        <span #star5 class="fa fa-star" [ngClass]="startClassList" (mouseenter)="mouseOverStar(5)"></span>
-      </button>
-      <button (click)="rate(6)">
-        <span #star6 class="fa fa-star" [ngClass]="startClassList" (mouseenter)="mouseOverStar(6)"></span>
-      </button>
+        <span (click)="rate(1)" #star1 class="fa fa-star" [ngClass]="startClassList" (mouseenter)="mouseOverStar(1)" (mouseleave)="mouseOutsideStar(1)"></span>
+        <span (click)="rate(2)" #star2 class="fa fa-star" [ngClass]="startClassList" (mouseenter)="mouseOverStar(2)"></span>
+        <span (click)="rate(3)" #star3 class="fa fa-star" [ngClass]="startClassList" (mouseenter)="mouseOverStar(3)"></span>
+        <span (click)="rate(4)" #star4 class="fa fa-star" [ngClass]="startClassList" (mouseenter)="mouseOverStar(4)"></span>
+        <span (click)="rate(5)" #star5 class="fa fa-star" [ngClass]="startClassList" (mouseenter)="mouseOverStar(5)"></span>
+        <span (click)="rate(6)" #star6 class="fa fa-star" [ngClass]="startClassList" (mouseenter)="mouseOverStar(6)"></span>
     </div>
 
     <div class="buttons mt-3">

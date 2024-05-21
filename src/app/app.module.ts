@@ -13,6 +13,7 @@ import { Feedback2Component } from './components/feedback2/feedback2.component';
 import { FormsModule } from '@angular/forms';
 import { NgxUiLoaderModule, NgxUiLoaderRouterModule } from "ngx-ui-loader";
 import { LoaderComponent } from './components/loader/loader.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { LoaderComponent } from './components/loader/loader.component';
     FormsModule,
     NgxUiLoaderModule,
     NgxUiLoaderRouterModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
