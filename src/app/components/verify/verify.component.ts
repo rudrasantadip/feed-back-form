@@ -1,95 +1,89 @@
-import { AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  QueryList,
+  ViewChildren,
+} from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ReCaptchaV3Service } from 'ng-recaptcha';
+import { GoogleResponse } from 'src/app/models/captcha_response';
 import { PersonalInformation } from 'src/app/models/personalInfo';
 import { ActivateComponentService } from 'src/app/services/activate-component.service';
 import { PersonalInfoShareService } from 'src/app/services/personal-info-share.service';
+import { TokenverifyService } from 'src/app/services/tokenverify.service';
 
 @Component({
   selector: 'app-verify',
   templateUrl: './verify.component.html',
-  styleUrls: ['./verify.component.css']
+  styleUrls: ['./verify.component.css'],
 })
-export class VerifyComponent implements OnInit,AfterViewInit
-{
-
-  userInput:string=''; // user entered otp
-  actualOtp:string='9830'; // actual otp
-  errorMessage:string='';
-
+export class VerifyComponent implements OnInit, AfterViewInit {
   //object to store personal info
-  personalInfo:PersonalInformation | null={fullName:'',mobileNumber:''}
+  personalInfo: PersonalInformation | null = { fullName: '', mobileNumber: '' };
 
-  @ViewChildren('pin0, pin1, pin2, pin3') pinInputs!: QueryList<ElementRef>; // fetching the reference of the four pin views
+  //Site Key for captcha
+ 
 
-  constructor(private router:Router, private activeComponent:ActivateComponentService, private personalInfoShare:PersonalInfoShareService)
-  {
 
-  }
+  constructor(
+    private router: Router,
+    private activeComponent: ActivateComponentService,
+    private personalInfoShare: PersonalInfoShareService,
+    private recaptcha: ReCaptchaV3Service,
+    private tokenverify:TokenverifyService
+  ) {}
 
   //oninit method
   ngOnInit(): void {
-      this.personalInfoShare.personalInfo$.subscribe(
-        (response)=>
-          {
-            this.personalInfo=response;
-          }
-      )
+    this.personalInfoShare.personalInfo$.subscribe((response) => {
+      this.personalInfo = response;
+    });
   }
 
   ngAfterViewInit(): void {
     this.activeComponent.updateComponent(1);
   }
 
-
   //Method to fetch the values from the pin view
-  onInputPinView(event:any, index:number)
-  {
-    const input = event.target as HTMLInputElement;
-    if (input.value.length === 1 && index < this.pinInputs.length - 1) {
-      const nextInput = this.pinInputs.toArray()[index + 1];
-      nextInput.nativeElement.focus();
-    }
-  }
 
-  //Method to validate
-  validateOtp()
-  {
-    this.userInput='';
-    this.pinInputs.forEach((input:ElementRef,index:number)=>{
-      this.userInput= this.userInput+input.nativeElement.value;
-    })
-    console.log(this.userInput);
-    if(this.userInput=='' && this.userInput.length<4) // user entered otp is empty
-    {
-      this.errorMessage='Please enter the otp sent to your mobile';
-    }
-    else // otp is not empty
-    {
 
-      //LOGIC TO SEND OTP TO THE MOBILE NUMBER HERE
-
-    if(this.userInput==this.actualOtp) // user entered otp matches, the generated otp
-      {
-        this.errorMessage='';
-        alert('Valid');
-        this.router.navigate(['feedback']);
+  //function to validate user using captcha
+  public send(form: NgForm): void {
+    if (form.invalid) {
+      for (const control of Object.keys(form.controls)) {
+        form.controls[control].markAsTouched();
       }
-    else // invalid otp
-    {
-      this.errorMessage='Invalid OTP entered';
-    }
+      return;
     }
 
+    this.recaptcha.execute('importantAction')
+    .subscribe((token: string) => {
+      console.log(`Token [${token}] generated`);
+      this.tokenverify.verifyToken(token).subscribe(
+        (response)=>
+          {
+            console.log(response.score);
+            this.checkScore(Number(response.score));
+          }
+      )
+
+
+    });
   }
-
-  //function to extract last three digits of mobile number
-
-  lastThreeDigits(mobileNumber:string | undefined):string
+  //function to verify the captcha token
+  checkScore(score:number)
   {
-    if(mobileNumber)
+    if(score>=0.5)
+      {
+        alert('Captcha Verified, Please Wait! Redirecting to the feedback form');
+        this.router.navigate(['/feedback']);
+      }
+    else
     {
-      return mobileNumber.slice(mobileNumber.length-3,mobileNumber.length)
+        alert('You did not pass the captcha test');
     }
-    return ''
   }
 }

@@ -57,35 +57,13 @@ main
     margin-bottom: 0;
 }
 
-.form-data
+.captcha-form
 {
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-align-items: center;
-padding: 9px;
+    text-align: center;
 }
 
-.pin-view > input
-{
-    margin-top: 16px;
-    width: 40px;
-    height: 40px;
-    margin-left: 12px;
-    margin-right: 12px;
-}
 
-.pin-view > input:focus {
-    border-color: #6c5ce7; /* Change border color */
-    box-shadow: 0 0 5px rgba(102, 175, 233, 0.5); /* Add a shadow */
-    outline: none; /* Remove default outline */
-    background-color: #f0f8ff; /* Change background color */
-}
 
-.buttons
-{
-    margin-top: 15px;
-}
 
 @media (max-width: 1024px) {
 

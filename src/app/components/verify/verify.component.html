@@ -8,29 +8,17 @@
     
         <div class="personal-header">
             <h1>Verification</h1>
-            <span>Please Enter the OTP sent to the mobile number *******{{lastThreeDigits(personalInfo?.mobileNumber)}}</span>
+            <span>Please Verify your self by passing the captcha test</span>
             <br>
-           
         </div>
     </div>
-
-
-    <div class="form-data">
-        <div class="pin-view">
-            <input type="text" maxlength="1" (input)="onInputPinView($event,0)" #pin0>
-            <input type="text" maxlength="1" (input)="onInputPinView($event,1)" #pin1>
-            <input type="text" maxlength="1" (input)="onInputPinView($event,2)" #pin2>
-            <input type="text" maxlength="1" (input)="onInputPinView($event,3)" #pin3>
+    
+    <form #form="ngForm" class="captcha-form">
+        <div class="row mt-3">
+          <div class="col-sm-12 mb-2">
+            <button type="button" class="btn btn-sm btn-primary text-center" (click)="send(form)">Send</button>
+          </div>
         </div>
-       
-
-        <span style="font-size: 12px;margin-top: 9px;" class="text-center">Please wait for a few seconds for the otp to generate </span>
-
-        <div class="buttons">
-            <button class="btn btn-primary m-3" (click)="validateOtp()">Validate</button>
-        </div>
-
-        <span style="color: red;font-size: 10px;">{{errorMessage}}</span>
-    </div>
+    </form>
 </main> 
 
