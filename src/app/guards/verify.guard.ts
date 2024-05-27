@@ -9,7 +9,6 @@ export const verifyGuard: CanActivateFn = (route, state) => {
   let isVerified:boolean=true;
   verifyService.isVerified$.subscribe(
     response=>{
-      console.log(response);
       if(response==false)
         {
           isVerified=false;
