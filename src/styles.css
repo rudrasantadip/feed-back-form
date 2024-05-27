@@ -4,9 +4,7 @@ body
     margin: 0;
     padding: 0;
     background-color: transparent;
-    overflow: hidden;
     font-family: 'Montserrat', sans-serif;
-
     background: url('/assets/images/bg2.png');
     background-position: center;
     background-repeat: no-repeat;
