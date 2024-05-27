@@ -9,6 +9,7 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 export class ParticipantService {
 
   private apiUrl='http://localhost:3000/participants/save';
+  private prodUrl='https://feed-back-form-backend.onrender.com/participants/save'
   constructor(private http:HttpClient) { }
 
   sendData(data:Participant):Observable<any>
@@ -16,7 +17,7 @@ export class ParticipantService {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
     });
-    return this.http.post(this.apiUrl,data,{headers,observe:'response'})
+    return this.http.post(this.prodUrl,data,{headers,observe:'response'})
     .pipe(
       map((response:HttpResponse<any>)=>{
         return {
