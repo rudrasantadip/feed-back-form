@@ -6,7 +6,8 @@
     grid-template-areas:
       'sidebar header header header'
       'sidebar form-body form-body form-body';
-    height: 100vh;
+    height: 100dvh;
+    overflow-y: scroll;
   }
 
   .form-body
