@@ -10,10 +10,9 @@
 
   .form-body
   {
-    overflow: hidden;
-    /* position: absolute; */
+    overflow-y: scroll;
     width: 100vw;
-    height: 100vh;
+    height: 200vh;
   }
 
 
