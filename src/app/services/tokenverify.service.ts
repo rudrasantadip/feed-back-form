@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 export class TokenverifyService {
 
   apiUrl:string='http://localhost:3000/captcha/verify';
+  prodUrl:string='https://feed-back-form-backend.onrender.com/captcha/verify';
 
   constructor(private http:HttpClient) 
   {
@@ -24,7 +25,7 @@ export class TokenverifyService {
       const headers = new HttpHeaders({
         'Content-Type': 'application/json',
       });
-      return this.http.post(this.apiUrl,data,{headers});
+      return this.http.post(this.prodUrl,data,{headers});
   }
 
 }
