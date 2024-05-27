@@ -42,7 +42,6 @@ export class VerifyComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.personalInfoShare.personalInfo$.subscribe((response) => {
       this.personalInfo = response; // fetching the personal information of the user for login verification
-      console.log(this.personalInfo);
     });
   }
 
@@ -64,11 +63,9 @@ export class VerifyComponent implements OnInit, AfterViewInit {
 
     this.recaptcha.execute('importantAction')
     .subscribe((token: string) => {
-      console.log(`Token [${token}] generated`);
       this.tokenverify.verifyToken(token).subscribe(
         (response)=>
           {
-            console.log(response.score);
             this.checkScore(Number(response.score));
             this.isVerified=true; // user is verified
             this.verify.updateVerification(this.isVerified);

@@ -17,7 +17,7 @@ import { ActivateComponentService } from 'src/app/services/activate-component.se
 import { FeedBackShareService } from 'src/app/services/feed-back-share.service';
 import { ParticipantService } from 'src/app/services/participant.service';
 import { PersonalInfoShareService } from 'src/app/services/personal-info-share.service';
-import { SheetApiService } from 'src/app/services/sheet-api.service';
+
 
 @Component({
   selector: 'app-feedback2',
@@ -55,7 +55,6 @@ export class Feedback2Component implements OnInit, AfterViewInit {
     //Getting the first part of the feedback form
     this.feedBackShare.currentFeedback$.subscribe((response) => {
       this.feedBackData = response;
-      console.log(this.feedBackData);
     });
 
     //Getting the personal information 
@@ -125,13 +124,11 @@ export class Feedback2Component implements OnInit, AfterViewInit {
       this.participantApi.sendData(participant).subscribe(
         (response:{body:any,status:number})=>
           {
-            console.log(response.body);
-            console.log(response.status);
             if(response.status==200)
             {
               alert("Your response has been submitted successfully");
-              this.router.navigate(['personal']);
             }
+            this.router.navigate(['personal']);
           },
           (error)=>{
             console.error(error);
