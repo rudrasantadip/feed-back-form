@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Participant } from '../models/participant';
-import { Observable } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, map } from 'rxjs';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +16,14 @@ export class ParticipantService {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
     });
-    return this.http.post(this.apiUrl,data,{headers});
+    return this.http.post(this.apiUrl,data,{headers,observe:'response'})
+    .pipe(
+      map((response:HttpResponse<any>)=>{
+        return {
+          body:response.body,
+          status:response.status
+        }
+      })
+    );
   }
 }

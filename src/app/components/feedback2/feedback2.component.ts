@@ -65,7 +65,7 @@ export class Feedback2Component implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.activeComponent.updateComponent(2);
+    this.activeComponent.updateComponent(2); //updating the navigation bar everytime a new component is loaded
   }
   //Rating mechanism
   mouseOverStar(
@@ -121,13 +121,24 @@ export class Feedback2Component implements OnInit, AfterViewInit {
         Rating: this.feedBackData.rating,
       };
      
-
+      //Sending the data to the backend server
       this.participantApi.sendData(participant).subscribe(
-        (response)=>
+        (response:{body:any,status:number})=>
           {
-            console.log(response);
+            console.log(response.body);
+            console.log(response.status);
+            if(response.status==200)
+            {
+              alert("Your response has been submitted successfully");
+              this.router.navigate(['personal']);
+            }
+          },
+          (error)=>{
+            console.error(error);
+            alert("Some error occured please retry");
+            this.router.navigate(['personal']);
           }
-      )
+      );
 
     }
    
